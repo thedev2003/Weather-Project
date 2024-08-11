@@ -9,27 +9,6 @@ input.addEventListener('keydown', function (event) {
 });
 
 
-// adjusting cursor position
-// function setCursorPosition(inputElement, position) {
-// 	if (inputElement.setSelectionRange) {
-// 		// Modern browsers
-// 		inputElement.focus();
-// 		inputElement.setSelectionRange(position, position);
-// 	} else if (inputElement.createTextRange) {
-// 		// Older versions of Internet Explorer
-// 		var range = inputElement.createTextRange();
-// 		range.move('character', position);
-// 		range.select();
-// 	}
-// }
-// const inputField = document.querySelector('input');
-
-// // Set cursor position to 5 when the input field gains focus
-// inputField.addEventListener('focus', function() {
-// 	setCursorPosition(inputField, 15);
-// });
-
-
 
 function getWeather() 
 {
@@ -120,13 +99,20 @@ function displayHourlyForecast(hourData)
 
 	const next24Hours = hourData.slice(0, 8); // Display the next 24 hours (3-hour intervals)
 
-	next24Hours.forEach(item => {
+
+	// add all the hourly data into the document
+	next24Hours.forEach(item => 
+	{
 		const dateTime = new Date(item.dt * 1000); // Convert timestamp to milliseconds
 		const hour = dateTime.getHours();
+
+
 		const temperature = Math.round(item.main.temp - 273.15); // Convert to Celsius
 		const iconCode = item.weather[0].icon;
 		const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
+
+		// HTML for every hourly forecast
 		const hourlyItemHTML = `
             <div class="hourItem">
                 <span>${hour}:00</span>
@@ -134,7 +120,6 @@ function displayHourlyForecast(hourData)
                 <span>${temperature}°C</span>
             </div>
         `;
-
 		hourForecastDiv.innerHTML += hourlyItemHTML;
 	});
 }

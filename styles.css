@@ -139,6 +139,8 @@ h2, label, p {
 	color: white;
 }
 
+
+/* image for each hourly forecast */
 .hourItem img{
 	width: 40px;
 	height: 40px;
