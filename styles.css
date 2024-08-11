@@ -7,6 +7,9 @@ body{
 	margin: 0;
 }
 
+
+
+/* wrapper div of all content */
 #weather-container{
 	background: #778e6f52;
     max-width: 400px;
@@ -18,6 +21,9 @@ body{
     backdrop-filter: blur(20px);
 }
 
+
+
+/* input button and its placeholder */
 input{
 	border: none;
 	box-sizing: content-box;
@@ -33,7 +39,7 @@ input::placeholder{
 
 
 
-
+/* button properties */
 button{
 	background: #675a7d62;
     color: white;
@@ -50,15 +56,10 @@ button:hover{
 	background: #4d719a;
 }
 
-#tempDiv{
-	font-size: 60px;
-	margin-top: -15px;
-}
 
-#weatherInfo{
-	font-size: 20px;
-}
 
+
+/* displays weather icon according to fetched data */
 #weatherIcon{
 	width: 200px;
 	height: 200px;
@@ -69,13 +70,29 @@ button:hover{
 
 
 
+
+/* displays temperature value */
+#tempDiv{
+	font-size: 60px;
+	margin-top: -15px;
+}
+
+
+
+/* displays short description of weather */
+#weatherInfo{
+	font-size: 20px;
+}
+
+
+
 h2, label, p {
 	color: #fff;
 	margin: 4px 0;
 }
 
 
-
+/* wrapper of hourly weather forecast */
 #hourForecast{
 	margin-top: 50px;
 	overflow-x: auto;
@@ -84,6 +101,10 @@ h2, label, p {
 	justify-content: space-between;
 }
 
+
+
+
+/* styling of scrollbar due to nowrap*/
 #hourForecast::-webkit-scrollbar {
 
     width: 15px; /* Width of the scrollbar */
@@ -97,15 +118,16 @@ h2, label, p {
 #hourForecast::-webkit-scrollbar-thumb {
 	width: 10px;
 	border-radius: 15px;
-    background: #bdbabae8; /* Thumb color */
+    background: #bdbabae8; /* Thumb/slider color */
 }
 
 #hourForecast::-webkit-scrollbar-thumb:hover {
-    background: #4d4a4abd; /* Thumb color on hover */
+    background: #4d4a4abd; /* Thumb/slider color on hover */
 }
 
 
 
+/* every hourly data within #hourForecast wrapper */
 .hourItem{
 	flex: 0 0 auto;
 	width: 80px;

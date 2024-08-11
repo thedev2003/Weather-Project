@@ -127,7 +127,7 @@ function displayHourlyForecast(hourData)
 		const iconCode = item.weather[0].icon;
 		const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
-		const hourlyItemHtml = `
+		const hourlyItemHTML = `
             <div class="hourItem">
                 <span>${hour}:00</span>
                 <img src="${iconUrl}" alt="Hourly Weather Icon">
@@ -135,6 +135,6 @@ function displayHourlyForecast(hourData)
             </div>
         `;
 
-		hourForecastDiv.innerHTML += hourlyItemHtml;
+		hourForecastDiv.innerHTML += hourlyItemHTML;
 	});
 }
